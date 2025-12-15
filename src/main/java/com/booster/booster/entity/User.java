@@ -16,10 +16,19 @@ import java.util.List;
 @Table(name = "users")
 @Entity
 public class User implements UserDetails {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "users_seq"
+    )
+    @SequenceGenerator(
+            name = "users_seq",
+            sequenceName = "users_id_seq",
+            allocationSize = 1
+    )
     @Column(nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(unique = true, length = 100, nullable = false)
     private String username;
