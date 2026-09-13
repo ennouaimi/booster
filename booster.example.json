@@ -1,0 +1,19 @@
+{
+  "name": "my-service",
+  "group": "com.example",
+  "package": "com.example.myservice",
+  "description": "My Spring Boot service",
+  "java": 21,
+  "port": 8080,
+  "database": "postgres",
+  "flyway": true,
+  "security": "jwt",
+  "cors_origins": ["http://localhost:3000"],
+  "public_paths": ["/api/auth/**", "/actuator/health", "/swagger-ui/**", "/v3/api-docs/**"],
+  "swagger": true,
+  "actuator": true,
+  "rate_limit": true,
+  "rate_limit_requests_per_minute": 120,
+  "docker": true,
+  "testcontainers": true
+}
