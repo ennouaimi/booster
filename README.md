@@ -2,7 +2,7 @@
 
 Booster is a **configurable Spring Boot project starter**. The goal is to avoid rebuilding the same infrastructure every time a new Java/Spring service is created.
 
-It is inspired by the reusable technical parts of `tracker-back`, while deliberately leaving HabitPalo/business code out of the generated project.
+It provides a reusable technical foundation while deliberately leaving application-specific business code out of the generated project.
 
 ## What Booster can generate
 
@@ -28,7 +28,7 @@ A new project can include, depending on configuration:
 - `/api/ping` starter endpoint
 - environment-variable based configuration
 
-The generated code contains infrastructure only. It does **not** copy habits, achievements, profiles, streaks, social features or any other HabitPalo domain code from `tracker-back`.
+The generated code contains infrastructure only. It does **not** include application-specific domain code.
 
 ## Quick start
 
@@ -138,7 +138,7 @@ Never commit the real `.env` file or production secrets.
 
 ## Why these defaults?
 
-The common pieces were selected from patterns that proved useful as `tracker-back` evolved: externalized PostgreSQL configuration, Flyway, stateless JWT security, explicit CORS, Swagger toggles, Actuator health probes, metrics, rate limiting, Docker support and reusable error handling.
+These defaults cover common needs for modern Spring Boot services: externalized PostgreSQL configuration, Flyway migrations, stateless JWT security, explicit CORS, Swagger toggles, Actuator health probes, metrics, rate limiting, Docker support and reusable error handling.
 
 Business-specific code is intentionally excluded so Booster stays useful for unrelated Spring projects.
 
